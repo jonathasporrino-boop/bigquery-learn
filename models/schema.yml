@@ -38,6 +38,6 @@ models:
         data_tests:
           - not_null
           - relationships:
-              arguments:
+              arguments: #change teste
                 to: ref('stg_customers')
                 field: customer_id

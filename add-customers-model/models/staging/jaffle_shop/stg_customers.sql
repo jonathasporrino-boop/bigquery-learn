@@ -1,7 +1,6 @@
 select
     id as customer_id,
     first_name,
-    last_name,
-    1
+    last_name
 
 from {{ source('jaffle_shop', 'customers') }}

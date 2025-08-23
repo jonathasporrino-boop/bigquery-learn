@@ -8,8 +8,14 @@ sources:
       tables:
           - name: customers
             description: One record per customer.
+            columns:
+              - name: id
+                description: primary key for customers data
           - name: orders
             description: One record per order. Includes cancelled and deleted orders.
+            columns:
+              - name: id
+                description: Primary key for orders.
     - name: stripe
       description: "This is the source for our Stripe payment data."
       database: dbt-tutorial # Optional: can be the same or a different database

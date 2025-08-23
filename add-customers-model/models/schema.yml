@@ -30,6 +30,7 @@ models:
           - unique
           - not_null
       - name: status
+        description: '{{doc("order_status")}}'
         data_tests:
           - accepted_values:
               arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
@@ -41,3 +42,25 @@ models:
               arguments: #change teste
                 to: ref('stg_customers')
                 field: customer_id
+
+  - name: stg_payments
+    description: This model cleans stg payment
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values:
+                - fail
+                - success
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values:
+                - credit_card
+                - bank_transfer
+                - coupon
+                - gift_card
